@@ -1,0 +1,57 @@
+.navBar{
+    max-width: 100%;
+    height: 60px;
+    background-color: rgba(0,0,0,1) !important;
+    transition: 0.5s;
+}
+.nav{
+   padding-right: 2%;
+}
+.navLink{
+    color: white !important;
+    font-family: Roboto,serif;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+.navBarScroll{
+    max-width: 100%;
+    height: 60px;
+    background-color:#ffffff !important;
+    transition: 0.5s;
+    padding: 0;
+    margin: 0;
+}
+.navLinkScroll{
+    color: rgba(0,0,0,0.7) !important;
+    font-family: Roboto,serif;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+.navLink:hover{
+    color: pink!important;
+    border: 1px solid white!important;
+    background-color: transparent!important;
+}
+.navLinkScroll:hover{
+    color: #0d39e1 !important;
+    border: 1px solid black!important;
+}
+.logoImg{
+    width: 100px;
+    height: 60px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 5%;
+}
+.ddBox{
+    background-color: black !important;
+    margin: 0!important;
+    padding: 0!important;
+}
