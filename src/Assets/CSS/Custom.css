@@ -15,9 +15,13 @@
     text-decoration: none;
 }
 .navBarScroll{
-    max-width: 100%;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     height: 60px;
-    background-color:#ffffff !important;
+    background-color:#021b4a!important;
     transition: 0.5s;
     padding: 0;
     margin: 0;
@@ -33,8 +37,6 @@
 }
 .navLink:hover{
     color: pink!important;
-
-    background-color: transparent!important;
 }
 .navLinkScroll:hover{
     color: #0d39e1 !important;
@@ -45,14 +47,17 @@
     height: 60px;
     padding: 0;
 }
+.ddMenu{
+    margin-top: 10px!important;
+    padding: 10px!important;
+}
 .ddBox{
-    background-color: black !important;
-    margin: 0!important;
-    padding: 0!important;
+    background-color: #021B4A!important;
+    margin-top: -8px!important;
 }
 .carouselImg{
     width: 100%;
-    height: 350px;
+    height: 450px!important;
 }
 .cardImg{
     width: 100px;
@@ -60,15 +65,17 @@
     border-radius: 50%;
 }
 .card{
-    height: 350px!important;
+    height: 450px!important;
     border-radius: 0!important;
     text-align: center;
+    background-color: rgb(221, 230, 237) !important;
 }
 
 .logoContainer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 65px;
 }
 .logoLeftDiv img{
     width: 35%;
@@ -126,7 +133,6 @@
 }
 .footer{
     background-color: #282c34;
-    padding: 20px 50px 20px 50px;
     border-radius: 0!important;
 }
 .title{
@@ -166,4 +172,130 @@
 }
 .noticeDiv p:hover{
     cursor: pointer;
+}
+.honorContainer{
+    background-color: rgba(20, 218, 224, 0.1);
+}
+.noticeTitle{
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: poppin, serif;
+    font-weight: 700;
+    padding-top: 15px;
+}
+.noticeDiv a{
+    display: flex;
+    text-decoration: none;
+    color: navy;
+    justify-content: start;
+    font-size: 15px;
+    font-family: Montserrat, serif;
+    font-weight: 500;
+}
+.noticeDiv a:hover{
+    text-decoration: underline;
+}
+.executives{
+    background-color: #021b4a;
+}
+.contact{
+    padding-left: 10% !important;
+}
+.contact h4{
+    color: white;
+    font-size: 20px;
+    font-family: Oswald, serif;
+    font-weight: 500;
+}
+.contact a{
+    text-decoration: none;
+    font-size: 14px;
+    color: silver;
+    font-family: Roboto, serif;
+    font-weight: 400;
+}
+.contact a:hover{
+    text-decoration: underline;
+    color: white;
+}
+.contact h6{
+    text-decoration: none;
+    font-size: 14px;
+    color: silver;
+    font-family: Roboto, serif;
+    font-weight: 400;
+}
+.contact span{
+    text-decoration: none;
+    font-size: 14px;
+    color: silver;
+    font-family: Roboto, serif;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.copyWrite{
+    background-color: #63666e;
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+}
+.footerCredit{
+    background-color: rgba(255,255,255,0.7) !important;
+    color: rgba(0,0,0,0.8) !important;
+    font-family: Roboto, serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 10px!important;
+}
+.footerCredit a{
+    text-decoration: none;
+}
+.footerCredit:hover{
+    color: #0d39e1!important;
+    cursor: pointer;
+}
+.iconDiv {
+    display: flex;
+    margin-left: -4px;
+    margin-top: 5px;
+    margin-bottom: 4px;
+}
+
+.contactLink {
+    display: flex; /* Ensures the children are displayed as flex items */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    box-sizing: border-box!important;
+    text-align: center!important;
+    text-decoration: none!important;
+    font-size: 20px!important;
+    font-family: Montserrat, serif !important;
+    font-weight: 500!important;
+    width: 30px!important;
+    height: 30px!important;
+    color: #0d39e1!important;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.contactLink:hover {
+    background-color: #0d39e1!important;
+    transition: 0.3s;
+    color: white!important;
+}
+.supportImg{
+    width: 100%;
+    height: auto;
+}
+.supportDiv{
+    padding: 10% 0 5% 0;
+}
+.juShoidMinar{
+    width: 70%;
+    height: auto;
+}
+.topImg{
+    width: 30%;
+    margin: 0 auto!important;
 }

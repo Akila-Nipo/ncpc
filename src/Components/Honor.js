@@ -6,48 +6,31 @@ import ChoyonSirCard from "./ChoyonSirCard";
 
 function Honor(props) {
     return (
-        <Container fluid="true" className="text-center mt-5">
+        <Container fluid="true" className="text-center mt-5 honorContainer">
             <Row className="p-0 m-0">
-                <Col md={3} lg={3} sm={12}>
-                    <h4 className="title">About ju cse</h4>
-                    <p className="description noticeDiv text-start p-3">
+                <Col className="noticeDiv" md={8} lg={8} sm={12}>
+                    <h4 className="noticeTitle text-center">About JU CSE</h4>
+                    <img className="juShoidMinar" src="https://i.pinimg.com/originals/9c/b5/0e/9cb50e29be9f450bb8e0b36d4f8ccdf6.jpg" alt=""/>
+                    <p className="description text-start p-3">
+
+                        <hr/>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad aliquid at blanditiis commodi consequuntur corporis deleniti doloremque dolorum ducimus eos error, expedita fuga illo inventore libero natus non nulla numquam porro possimus qui quibusdam quidem, quis quo recusandae sit totam vero vitae voluptatum? Aliquid error inventore optio quaerat tempora.
                     </p>
                 </Col>
-                <Col md={6} lg={6} sm={12}>
-                    <Row className="m-0 p-0">
-                        <h4 className="title">Executives</h4>
-                        <ChoyonSirCard choyon={choyon} />
-                    </Row>
-                    <Row className="p-0 m-0">
-                        <Col className="m-0 p-0" md={6} lg={6} sm={12}>
-                            <ChoyonSirCard choyon={choyon} />
-                        </Col>
-                        <Col className="m-0 p-0" md={6} lg={6} sm={12}>
-                            <ChoyonSirCard choyon={choyon} />
-                        </Col>
-                    </Row>
-                    <Row className="p-0 m-0">
-                        <Col className="m-0 p-0" md={6} lg={6} sm={12}>
-                            <ChoyonSirCard choyon={choyon} />
-                        </Col>
-                        <Col className="m-0 p-0" md={6} lg={6} sm={12}>
-                            <ChoyonSirCard choyon={choyon} />
-                        </Col>
-                    </Row>
-                </Col>
-                <Col md={3} lg={3} sm={12}>
-                    <h3 className="title">Notice</h3>
+
+                <Col md={4} lg={4} sm={12}>
                     <div className="noticeDiv">
-                        <p className="description">1. when someone clicks on your call to action, you need to click on the button element in</p>
+                        <h3 className="noticeTitle">Notice</h3>
                         <hr/>
-                        <p className="description">2. when someone clicks on your call to action, you need to click on the button element in</p>
+                        <a href="#">1. Registration Rules</a>
                         <hr/>
-                        <p className="description">3. when someone clicks on your call to action, you need to click on the button element in</p>
+                        <a href="#">2. Accomodation</a>
                         <hr/>
-                        <p className="description">4. when someone clicks on your call to action, you need to click on the button element in</p>
+                        <a href="#">3. Payment Details</a>
                         <hr/>
-                        <p className="description">5. when someone clicks on your call to action, you need to click on the button element in</p>
+                        <a href="#">4. Main Contest Date</a>
+                        <hr/>
+                        <a href="#">5. Action</a>
                         <hr/>
                     </div>
                 </Col>

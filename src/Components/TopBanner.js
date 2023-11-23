@@ -7,19 +7,8 @@ function TopBanner(props) {
             <marquee className="mar" behavior="" direction="">**NCPC CSE JU**</marquee>
             <Container fluid="true" className="topBanner">
                 <Row className="p-0 m-0">
-                    <Col className="m-0 p-0" lg={3} md={3} sm={12}>
-                        <Card className="card">
-                            <Card.Body>
-                                <img className="cardImg" src="https://juniv.edu/storage/image/administration/BDTi5y9MuACqTZV9DPHyJkJx3qpswVRBOQfK37J9.jpg"  alt="af"/>
-                                <Card.Title className="title mt-1">VC JU</Card.Title>
-                                <Card.Text className="description">
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col className="m-0 p-0" lg={6} md={6} sm={12}>
+
+                    <Col className="m-0 p-0">
                         <Carousel className="card">
                             <Carousel.Item>
                                 <img className="carouselImg" src="https://juniv.edu/storage/image/gallery/NMYT0PnV9SSOx4IAzRUrg6UwweXWq1WBXshVwkNr.jpg" alt=""/>
@@ -58,18 +47,7 @@ function TopBanner(props) {
                             </Carousel.Item>
                         </Carousel>
                     </Col>
-                    <Col className="p-0" lg={3} md={3} sm={12}>
-                        <Card className="card">
-                            <Card.Body>
-                                <img className="cardImg" src="https://juniv.edu/storage/image/teacher/gmvOTE1YBVHXgiq4m8kNTh0pXSgpZ7DZet1V7NRa.png" alt=""/>
-                                <Card.Title className="title">Chairman Ju CSE</Card.Title>
-                                <Card.Text className="description">
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
+
                 </Row>
             </Container>
         </Fragment>
