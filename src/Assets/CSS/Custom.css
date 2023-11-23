@@ -299,3 +299,33 @@
     width: 30%;
     margin: 0 auto!important;
 }
+.nextBtn{
+    text-align: right;
+}
+.nextBtn Button{
+    background-color: gray!important;
+    width: 80px !important;
+    font-family: Montserrat, serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+}
+.backBtn{
+    background-color: gray!important;
+    width: 80px !important;
+    font-family: Montserrat, serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.nextBtn2{
+    position: absolute!important;
+    background-color: gray!important;
+    width: 80px !important;
+    font-family: Montserrat, serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    right: 16%!important;
+}

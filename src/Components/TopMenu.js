@@ -13,18 +13,18 @@ function TopMenu(props) {
         logo:logo1
     })
 
-    useEffect(()=>{
-        function handleScroll(){
-            if(window.scrollY>65){
-                setIsScroll(true);
-            }
-            else{
-                setIsScroll(false);
-            }
-        }
-        window.addEventListener('scroll',handleScroll);
-        return window.addEventListener('scroll',handleScroll);
-    },[]);
+    // useEffect(()=>{
+    //     function handleScroll(){
+    //         if(window.scrollY>66){
+    //             setIsScroll(true);
+    //         }
+    //         else{
+    //             setIsScroll(false);
+    //         }
+    //     }
+    //     window.addEventListener('scroll',handleScroll);
+    //     return window.addEventListener('scroll',handleScroll);
+    // },[]);
 
     const handleMouseEnter = () => {
         setDropdownOpen(true);

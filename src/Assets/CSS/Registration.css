@@ -1,5 +1,8 @@
 .registration {
-    background-color: #e5dcdc;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background: url("../Images/bakground.jpg") no-repeat center;
     padding: 5% 12% 5% 12%;
 }
 .form-control:focus{
@@ -25,4 +28,5 @@
     border: 1px solid black;
     padding: 5%;
     border-radius: 5px;
+    background-color: rgb(203, 222, 217);
 }

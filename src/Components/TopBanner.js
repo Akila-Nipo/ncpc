@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {Button, Card, Carousel, Col, Container, Row} from "react-bootstrap";
+import {Button, Carousel, Col, Container, Row} from "react-bootstrap";
 
 function TopBanner(props) {
     return (
