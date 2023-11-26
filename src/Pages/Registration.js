@@ -1,8 +1,15 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment,useState} from 'react';
 import '../Assets/CSS/Registration.css';
 import RegiForm from "../Components/RegiForm";
+import FormContext from "../Components/Context/FormContext";
 
 function Registration(props) {
+
+    const [first,setFirst] = useState(true);
+    const [second,setSecond] = useState(false);
+    const [third,setThird] = useState(false);
+    const [fourth,setFourth] = useState(false);
+
     const [data,setData] = useState({
         teamName:"",
         instituteName:"",
@@ -53,7 +60,9 @@ function Registration(props) {
 
     return (
         <Fragment>
-            <RegiForm data={data} setData={setData} />
+           <FormContext.Provider value={{data,setData,first,setFirst,second,setSecond,third,setThird,fourth,setFourth}}>
+               <RegiForm/>
+           </FormContext.Provider>
         </Fragment>
     );
 }

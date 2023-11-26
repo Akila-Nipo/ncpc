@@ -1,17 +1,15 @@
-import React, {useState} from 'react';
-import {Button, Col, Container, Form, Row} from "react-bootstrap";
+import React, {useContext} from 'react';
+import {Container} from "react-bootstrap";
 import FirstContestant from "./FirstContestant";
 import SecondContestant from "./SecondContestant";
 import ThirdContestant from "./ThirdContestant";
 import TeacherData from "./TeacherData";
 import axios from "axios";
+import FormContext from "./Context/FormContext";
 
-function RegiForm({data, setData}) {
+function RegiForm() {
 
-    const [first,setFirst] = useState(true);
-    const [second,setSecond] = useState(false);
-    const [third,setThird] = useState(false);
-    const [fourth,setFourth] = useState(false);
+    const {data,setData,first,setFirst,second,setSecond,third,setThird,fourth,setFourth} = useContext(FormContext);
 
 
     const inputChange = (e)=>{
@@ -26,11 +24,21 @@ function RegiForm({data, setData}) {
                 [e.target.name]:e.target.value,
             });
         }
-        console.log(e.target.value);
     };
 
     const postDataToBackend = (e) => {
         e.preventDefault();
+
+        const emptyFields = Object.entries(data).filter(([key, value]) => {
+            return value === "" || value === null || value === undefined;
+        });
+
+        if (emptyFields.length > 0) {
+            const emptyFieldNames = emptyFields.map(([key, value]) => key).join(', ');
+            window.alert(`Please fill in the following fields: ${emptyFieldNames}`);
+            return;
+        }
+
         const formData = new FormData();
         Object.entries(data).forEach(([key, value]) => {
             formData.append(key, value);
@@ -41,10 +49,10 @@ function RegiForm({data, setData}) {
                 console.log(response.data);
             })
             .catch(error => {
-                // Handle error
                 console.error('There was an error!', error);
             });
     };
+
 
 
     const firstCall =()=>{
@@ -81,13 +89,13 @@ function RegiForm({data, setData}) {
                 <h4 className="boldTitle mb-5">Registration Form</h4>
 
                 {
-                    !second && first && !third && !fourth?<FirstContestant secondCall={secondCall} inputChange={inputChange} data={data}/>:""
+                    !second && first && !third && !fourth?<FirstContestant secondCall={secondCall} inputChange={inputChange}/>:""
                 }
                 {
-                    second && !first && !third && !fourth?<SecondContestant firstCall={firstCall} thirdCall={thirdCall} inputChange={inputChange} data={data}/>:""
+                    second && !first && !third && !fourth?<SecondContestant firstCall={firstCall} thirdCall={thirdCall} inputChange={inputChange}/>:""
                 }
                 {
-                    third && !first && !second && !fourth?<ThirdContestant secondCall={secondCall} fourthCall={fourthCall} inputChange={inputChange} />:""
+                    third && !first && !second && !fourth?<ThirdContestant secondCall={secondCall} fourthCall={fourthCall} inputChange={inputChange}/>:""
                 }
                 {
                     !third && !first && !second && fourth?<TeacherData thirdCall={thirdCall} inputChange={inputChange} postDataToBackend={postDataToBackend}/>:""

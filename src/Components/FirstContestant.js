@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Button, Col, Row} from "react-bootstrap";
+import FormContext from "./Context/FormContext";
 
-function FirstContestant({secondCall,inputChange,data}) {
+function FirstContestant({secondCall,inputChange}) {
 
+    const {data} = useContext(FormContext);
 
     return (
         <div className="firstContestant mt-4">
@@ -41,16 +43,19 @@ function FirstContestant({secondCall,inputChange,data}) {
                         className="form-control"
                         name="firstUserName1"
                         onChange={inputChange}
+                        value={!data.firstUserName1===""?"":data.firstUserName1}
                     />
                 </Col>
                 <Col md={6} sm={12} lg={6}>
                     <label htmlFor="x">Last Name</label>
                     <input
                         type="text"
-                        placeholder="First Name"
+                        placeholder="Second Name"
                         className="form-control"
                         name="firstUserName2"
                         onChange={inputChange}
+                        value={!data.firstUserName2===""?"":data.firstUserName2}
+
                     />
                 </Col>
             </Row>
@@ -63,6 +68,8 @@ function FirstContestant({secondCall,inputChange,data}) {
                         className="form-control"
                         name="firstUserEmail"
                         onChange={inputChange}
+                        value={!data.firstUserEmail===""?"":data.firstUserEmail}
+
                     />
                     <label htmlFor="x">Contact Number</label>
                     <input
@@ -71,6 +78,7 @@ function FirstContestant({secondCall,inputChange,data}) {
                         className="form-control"
                         name="firstUserPhone"
                         onChange={inputChange}
+                        value={!data.firstUserPhone===""?"":data.firstUserPhone}
                     />
                     <label>Gender</label><br/>
                     <input
@@ -79,13 +87,16 @@ function FirstContestant({secondCall,inputChange,data}) {
                         name="firstUserGender"
                         value="male"
                         onChange={inputChange}
-                    /> <label className="mx-1" htmlFor="">Male</label>
+                        checked={data.firstUserGender==="male"}
+                    />
+                    <label className="mx-1" htmlFor="">Male</label>
                     <input
                         className="form-check-input mx-1"
                         type="radio"
                         value="female"
                         name="firstUserGender"
                         onChange={inputChange}
+                        checked={data.firstUserGender==="female"}
                     /> <label htmlFor=""> Female</label><br/>
                     <label htmlFor="">Date of birth</label><br/>
                     <input
@@ -94,6 +105,7 @@ function FirstContestant({secondCall,inputChange,data}) {
                         required="true"
                         name="firstUserDob"
                         onChange={inputChange}
+                        value={!data.firstUserDob===""?"":data.firstUserDob}
                     />
                     <label htmlFor="pp">NID/Birth Registration</label><br/>
                     <input
@@ -101,6 +113,7 @@ function FirstContestant({secondCall,inputChange,data}) {
                         className="form-control"
                         name="firstUserNid"
                         onChange={inputChange}
+                        value={!data.firstUserNid===""?"":data.firstUserNid}
                     />
                     <label htmlFor="available">T-shirt size</label><br/>
                     <select
@@ -108,6 +121,7 @@ function FirstContestant({secondCall,inputChange,data}) {
                         className="form-control w-25"
                         name="firstUserTShirt"
                         onChange={inputChange}
+                        value={!data.firstUserTShirt===""?"":data.firstUserTShirt}
                     >
                         <option value="0">Select</option>
                         <option value="s">S</option>
@@ -124,16 +138,26 @@ function FirstContestant({secondCall,inputChange,data}) {
                         name="firstUserId"
                         onChange={inputChange}
                     />
+                    {
+                        data.firstUserId?(
+                            <div>Your Uploaded File is : {data.firstUserId.name}</div>
+                        ):""
+                    }
                     <label htmlFor="cc">Contestant Photo</label><br/>
                     <input
                         type="file"
                         className="form-control"
-                        name="firstUserImage"
+                        name="firstUserPhoto"
                         onChange={inputChange}
                     />
-                   <div className="nextBtn">
-                       <Button onClick={secondCall}>Next</Button>
-                   </div>
+                    {
+                        data.firstUserPhoto?(
+                            <div>Your Uploaded File is : {data.firstUserPhoto.name}</div>
+                        ):""
+                    }
+                    <div className="nextBtn">
+                        <Button onClick={secondCall}>Next</Button>
+                    </div>
                 </Col>
             </Row>
         </div>

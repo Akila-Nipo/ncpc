@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Button, Col, Row} from "react-bootstrap";
+import FormContext from "./Context/FormContext";
 
 function SecondContestant({thirdCall,firstCall,inputChange}) {
+
+    const {data} = useContext(FormContext);
+
     return (
         <div className="firstContestant mt-5">
             <h4 className="title mb-4">Team Member-2</h4>
@@ -15,6 +19,8 @@ function SecondContestant({thirdCall,firstCall,inputChange}) {
                         className="form-control"
                         name="secondUserName1"
                         onChange={inputChange}
+                        value={!data.secondUserName1===""?"":data.secondUserName1}
+
                     />
                 </Col>
                 <Col md={6} sm={12} lg={6}>
@@ -25,6 +31,8 @@ function SecondContestant({thirdCall,firstCall,inputChange}) {
                         className="form-control"
                         name="secondUserName2"
                         onChange={inputChange}
+                        value={!data.secondUserName2===""?"":data.secondUserName2}
+
                     />
                 </Col>
             </Row>
@@ -37,6 +45,8 @@ function SecondContestant({thirdCall,firstCall,inputChange}) {
                         className="form-control"
                         name="secondUserEmail"
                         onChange={inputChange}
+                        value={!data.secondUserEmail===""?"":data.secondUserEmail}
+
                     />
                     <label htmlFor="x">Contact Number</label>
                     <input
@@ -45,6 +55,8 @@ function SecondContestant({thirdCall,firstCall,inputChange}) {
                         className="form-control"
                         name="secondUserPhone"
                         onChange={inputChange}
+                        value={!data.secondUserPhone===""?"":data.secondUserPhone}
+
                     />
                     <label>Gender</label><br/>
                     <input
@@ -53,6 +65,7 @@ function SecondContestant({thirdCall,firstCall,inputChange}) {
                         name="secondUserGender"
                         value="male"
                         onChange={inputChange}
+                        checked={data.secondUserGender==="male"}
                     /> <label className="mx-1" htmlFor="">Male</label>
                     <input
                         className="form-check-input mx-1"
@@ -60,6 +73,7 @@ function SecondContestant({thirdCall,firstCall,inputChange}) {
                         value="female"
                         name="secondUserGender"
                         onChange={inputChange}
+                        checked={data.secondUserGender==="female"}
                     /> <label htmlFor=""> Female</label><br/>
                     <label htmlFor="">Date of birth</label><br/>
                     <input
@@ -68,6 +82,8 @@ function SecondContestant({thirdCall,firstCall,inputChange}) {
                         required="true"
                         name="secondUserDob"
                         onChange={inputChange}
+                        value={!data.secondUserDob===""?"":data.secondUserDob}
+
                     />
                     <label htmlFor="pp">NID/Birth Registration</label><br/>
                     <input
@@ -75,6 +91,8 @@ function SecondContestant({thirdCall,firstCall,inputChange}) {
                         className="form-control"
                         name="secondUserNid"
                         onChange={inputChange}
+                        value={!data.secondUserNid===""?"":data.secondUserNid}
+
                     />
                     <label htmlFor="available">T-shirt size</label><br/>
                     <select
@@ -82,6 +100,8 @@ function SecondContestant({thirdCall,firstCall,inputChange}) {
                         className="form-control w-25"
                         name="secondUserTShirt"
                         onChange={inputChange}
+                        value={!data.secondUserTShirt===""?"":data.secondUserTShirt}
+
                     >
                         <option value="0">Select</option>
                         <option value="s">S</option>
@@ -98,13 +118,27 @@ function SecondContestant({thirdCall,firstCall,inputChange}) {
                         name="secondUserId"
                         onChange={inputChange}
                     />
+                    {
+                        data.secondUserId?(
+                            <div>Your Uploaded File is : {data.secondUserId.name}</div>
+                        ):(
+                            <div>Please select a photo</div>
+                        )
+                    }
                     <label htmlFor="cc">Contestant Photo</label><br/>
                     <input
                         type="file"
                         className="form-control"
-                        name="secondUserImage"
+                        name="secondUserPhoto"
                         onChange={inputChange}
                     />
+                    {
+                        data.secondUserPhoto?(
+                            <div>Your Uploaded File is : {data.secondUserPhoto.name}</div>
+                        ):(
+                            <div>Please select a photo</div>
+                        )
+                    }
                 </Col>
                 <div className="d-flex">
                     <Button className="backBtn" onClick={firstCall}>Back</Button>
